@@ -25,7 +25,38 @@ class SymbolTableTest {
 		String str;
 		SymbolTable st = new SymbolTable();
 
-		printMenu();
+		//Hash test
+		int hashnumber = st.hash("test");
+		st.put("test", 'c');
+		st.put("sett", 'd');
+		System.out.println("Added 'test' and 'sett' as keys for 'c' and 'd' respectively");
+		st.dump();
+		System.out.println("Size: " + st.size());
+		if(st.size() != 2)
+			System.out.println("Åsna");
+		st.put("test", 'e');
+		System.out.println("Overwrote 'c' with 'e' as the value for key 'test'");
+		st.dump();
+		System.out.println("Size: " + st.size());
+		if(st.size() != 2)
+			System.out.println("Åsna");
+		st.put("hej", 'd');
+		st.put("jeh", 'c');
+		System.out.println("Added 'hej' and 'jeh' as keys for 'd' and 'c' respectively");
+		st.dump();
+		System.out.println("Size: " + st.size());
+		if(st.size() != 4)
+			System.out.println("Åsna");
+		st.delete("test");
+		System.out.println("Deleted 'test' ");
+		st.dump();
+		System.out.println("Size: " + st.size());
+		if(st.size() != 3)
+			System.out.println("Åsna");
+
+
+
+		/*printMenu();
 
 		while (true) {
 			System.out.print("lab > ");
@@ -74,6 +105,6 @@ class SymbolTableTest {
 				System.out.print("**** Sorry, No menu item named '");
 				System.out.println(c + "'");
 			}
-		}
+		}*/
 	}
 }

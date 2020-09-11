@@ -70,6 +70,7 @@ public class SymbolTable {
 			if(keys[i] != null && keys[i].equals(key)){
 				keys[i] = null;
 				vals[i] = null;
+				N--;
 			}
 
 		}
@@ -121,10 +122,12 @@ public class SymbolTable {
 				N--;
 			}
 			if(deleted){
+				
 			if(i == keys.length - 1)
 					i = -1;
 			if (keys[i+1] != null && hash(keys[i+1]) != i+1){
 				put(keys[i+1], get(keys[i+1]));
+				
 				keys[i+1] = null;
 				vals[i+1] = null;
 			}
